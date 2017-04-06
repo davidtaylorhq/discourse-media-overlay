@@ -1,0 +1,24 @@
+{{# if service.open }}
+<div id="media-overlay" class="{{if collapsed 'collapsed'}}">
+	<div id="title" {{action "toggle"}}>
+		<div class="media-title">
+			{{i18n "media_overlay.title"}}
+		</div>
+		<div class="media-buttons">
+			{{#d-button action="toggle" class="media-toggle"}}
+			    {{#if collapsed}}
+			    	{{fa-icon 'caret-up'}}
+			    {{else}}
+			    	{{fa-icon 'caret-down'}}
+			    {{/if}}
+			{{/d-button}}
+			{{#d-button action="close" class="media-close"}}
+			    {{fa-icon 'close'}}
+			{{/d-button}}
+		</div>
+	</div>
+	<div id="content">
+		{{{service.content}}}
+	</div>
+</div>
+{{/if}}

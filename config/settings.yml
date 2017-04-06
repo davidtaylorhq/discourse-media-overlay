@@ -1,0 +1,4 @@
+plugins:
+  media_overlay_enabled:
+    default: true
+    client: true
