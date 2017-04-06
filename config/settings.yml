@@ -2,3 +2,6 @@ plugins:
   media_overlay_enabled:
     default: true
     client: true
+  media_overlay_dock_left:
+    default: false
+    client: true

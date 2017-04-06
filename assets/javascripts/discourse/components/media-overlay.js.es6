@@ -6,15 +6,20 @@ export default Ember.Component.extend({
 
     collapsed: false,
 
+    dockLeft: false,
+
     valueObserver: Ember.observer('service.content', function(sender, key, value, rev) {
 	    this.set('collapsed', false);
   	}),
 
+    init(){
+    	this._super(...arguments);
+    	this.set('dockLeft',this.siteSettings.media_overlay_dock_left);
+    },
+
     didRender: function() {
-    	console.log("Did insert element");
         Ember.run.scheduleOnce('afterRender', this, function() {
         	this.$(".lazyYT").lazyYT();
-        	console.log("Did render");
     	});
 
     },
@@ -25,6 +30,18 @@ export default Ember.Component.extend({
 	    },
 	    close: function() {
 	      this.get('service').set('open', false);
+	    },
+	    switchSides: function() {
+	      this.toggleProperty('dockLeft');
 	    }
-  	}
+  	},
+
+  	additionalClasses: function() {
+      
+      if(this.get('dockLeft')){
+        return 'dock-left'
+      }else{
+      	return 'dock-right'
+      }
+    }.property('dockLeft'),
 });

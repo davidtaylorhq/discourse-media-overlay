@@ -1,3 +1,4 @@
 en:
   site_settings:
     media_overlay_enabled: "Enable Media Overlay Plugin"
+    media_overlay_dock_left: "Dock the player in the bottom left by default (leave unticked for bottom right)"

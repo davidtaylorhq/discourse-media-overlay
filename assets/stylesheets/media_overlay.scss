@@ -2,7 +2,12 @@
 {
 	position: fixed;
     bottom: 0;
-    right: 20px;
+    &.dock-right{
+        right: 20px;
+    }
+    &.dock-left{
+        left: 20px;
+    }
     
     z-index: 9999;
 
@@ -21,7 +26,7 @@
     	width: 100%;
     	margin-bottom: 2px;
 
-    	.media-toggle{
+    	.media-toggle, .media-switch{
 	    	margin-right: 2px;
     	}
     }
@@ -56,6 +61,41 @@
     }
 }
 
+.no-touch #media-overlay{
+    #title{
+        height:0px;
+        transition: 0.5s height;
+        overflow:hidden;
+    }
+
+    &:hover #title{
+        height:30px;
+    }
+
+    &.collapsed #title{
+        height:30px;
+    }
+
+
+}
+
+
+
+.no-touch .media-overlay-eligable{
+    
+    .control{
+        opacity: 0;
+        transition: 0.5s opacity;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &:hover .control{
+        opacity: 1;
+    }
+
+}
 
 .media-overlay-eligable .control{
 	float:right;
