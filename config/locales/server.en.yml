@@ -1,4 +1,6 @@
 en:
+  media_overlay:
+    move_to_theme: "The discourse-media-overlay plugin has now been replaced with a theme component. Please uninstall the plugin and install the theme. <a href=\"https://github.com/davidtaylorhq/discourse-media-overlay-theme\">Click here for more information</a>."
   site_settings:
     media_overlay_enabled: "Enable Media Overlay Plugin"
     media_overlay_dock_left: "Dock the player in the bottom left by default (leave unticked for bottom right)"
